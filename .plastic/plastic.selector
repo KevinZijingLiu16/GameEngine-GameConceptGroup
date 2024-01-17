@@ -1,0 +1,4 @@
+repository "GCD-2024-AA2997@RkM697@cloud"
+  path "/"
+    br "/main"
+    co "/main"
