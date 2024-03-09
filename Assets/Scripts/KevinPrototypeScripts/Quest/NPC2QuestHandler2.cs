@@ -37,7 +37,7 @@ public class NPC2QuestHandler2 : MonoBehaviour
 
     public void AssignQuestButton()
     {
-        // Assuming you want NPC2 to rotate and fly when assigned a quest
+        
         shouldRotate = true;
         shouldFly = true;
 
