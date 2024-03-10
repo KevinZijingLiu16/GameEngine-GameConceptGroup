@@ -7,12 +7,11 @@ public class BuildingManager : MonoBehaviour
     [Header("Build Objects")]
     [SerializeField] private List<GameObject> floorObjects = new List<GameObject>();
     [SerializeField] private List<GameObject> wallObjects = new List<GameObject>();
+    [SerializeField] private List<GameObject> doorObjects = new List<GameObject>(); // Add doors
 
     [Header("Build Settings")]
     [SerializeField] private SelectedBuildType currentBuildType;
     [SerializeField] private LayerMask connectorLayer;
-
-
 
     [Header("Ghost Settings")]
     [SerializeField] private Material ghostMaterialValid;
@@ -30,6 +29,20 @@ public class BuildingManager : MonoBehaviour
 
     private void Update()
     {
+        // Switch between building types using keys 1, 2, and 3
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            currentBuildType = SelectedBuildType.floor;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            currentBuildType = SelectedBuildType.wall;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            currentBuildType = SelectedBuildType.door;
+        }
+
         if (Input.GetKeyDown(KeyCode.B))
         {
             isBuilding = !isBuilding;
@@ -44,7 +57,7 @@ public class BuildingManager : MonoBehaviour
             }
         }
 
-        // Check for left mouse click instead of "V" key
+       
         if (isBuilding && Input.GetMouseButtonDown(0))
         {
             Debug.Log("Left mouse button clicked!");
@@ -285,7 +298,8 @@ public class BuildingManager : MonoBehaviour
                 return floorObjects[currentBuildIndex];
             case SelectedBuildType.wall:
                 return wallObjects[currentBuildIndex];
-            
+            case SelectedBuildType.door:
+                return doorObjects[currentBuildIndex];
         }
         return null;
     }
@@ -323,6 +337,7 @@ public enum SelectedBuildType
 {
     floor,
     wall,
+    door
 
    
 }
