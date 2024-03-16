@@ -5,7 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/DialogueQuests/Demo/DemoActorRelation.unity
+    guid: 215cbd08f66b80546a4bdd25562bcb21
+  - enabled: 1
+    path: Assets/DialogueQuests/Demo/DemoActorRelationPart2.unity
+    guid: 22bee9a39d767cf49a1709548332eec0
   m_configObjects: {}
